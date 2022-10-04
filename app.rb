@@ -11,10 +11,10 @@ class Application < Sinatra::Base
   # Declares a route that responds to a request with:
   #  - a GET method
   #  - the path /
-  post '/submit' do
-    name = params[:name]
-    message = params[:message]
-    return "Thanks #{name}, you sent this message: #{message}"
+  post '/sort-order' do
+    names = params[:names]
+    sorted_names = names.split(",").sort.join(",")
+    return sorted_names
   end
 end
 
